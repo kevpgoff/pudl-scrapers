@@ -78,5 +78,10 @@ class TestResponseFactory(factory.Factory):
             file_path=test_path("ferc1.html"),
         )
 
+        eiawater = factory.Trait(
+            url="https://www.eia.gov/electricity/data/water/",
+            file_path=test_path("eiawater.html"),
+        )
+
     encoding = "utf-8"
     request = factory.SubFactory(RequestFactory, url=factory.SelfAttribute("..url"))

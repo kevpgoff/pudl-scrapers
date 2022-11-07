@@ -57,6 +57,16 @@ class Eia923(DataFile):
         return f"Eia923(year={self['year']}, save_path='{self['save_path']}')"
 
 
+class EiaWater(DataFile):
+    """The EIA Thermoelectric Cooling Water forms in an xlsx file."""
+
+    year = scrapy.Field(serializer=int)
+
+    def __repr__(self):
+        """String representation of an EIA Thermoelectric Cooling Water data file."""
+        return f"EiaWater(year={self['year']}, save_path='{self['save_path']}')"
+
+
 class Ferc1(DataFile):
     """The Ferc1 forms in a zip file."""
 
